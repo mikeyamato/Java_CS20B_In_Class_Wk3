@@ -15,7 +15,7 @@ public class StackImplementation<T> implements StackInterface<T>{
   // create a constructor (use name of class)
   public StackImplementation(int size){
     // casting into array of generic types
-    elements = (T[]) new Object[size];
+    this.elements = (T[]) new Object[size];
     this.size = size;
     this.topIndex = -1;  // constructing it here instead of in the above "protected" statement
   }
@@ -38,7 +38,7 @@ public class StackImplementation<T> implements StackInterface<T>{
 
   @Override
   public void pop() throws StackUnderflowException {
-    if(!isEmpty()){
+    if(!this.isEmpty()){
       // opposite order from push()
       elements[topIndex] = null;
       topIndex--;
@@ -49,7 +49,7 @@ public class StackImplementation<T> implements StackInterface<T>{
 
   @Override
   public T top() throws StackUnderflowException{
-    if(!isEmpty()){
+    if(!this.isEmpty()){
       return elements[topIndex];
     } else {
       throw new StackUnderflowException("The stack is empty");

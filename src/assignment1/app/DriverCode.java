@@ -1,9 +1,6 @@
 package assignment1.app;
 
-import assignment1.stack.StackImplementation;
-import assignment1.stack.StackInterface;
-import assignment1.stack.StackOverflowException;
-import assignment1.stack.StackUnderflowException;
+import assignment1.stack.*;
 
 public class DriverCode {
   public static void main (String[] args) throws StackOverflowException, StackUnderflowException {
@@ -17,5 +14,13 @@ public class DriverCode {
     System.out.println(stack.top());
     stack.pop();
     System.out.println(stack.top());
+
+    StackInterface<Integer> stackArrayList = new StackImplementationArrayList<Integer>();
+    stackArrayList.push(1);
+    System.out.println(stackArrayList.top());
+    stackArrayList.push(2);
+    System.out.println(stackArrayList.top());
+    stackArrayList.pop();
+    System.out.println(stackArrayList.top());
   }
 }
